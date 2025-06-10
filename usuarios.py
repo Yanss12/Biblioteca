@@ -19,14 +19,14 @@ def listar_usuarios() -> list:
    return cadastro_usuarios
 
 # função para pesquisar usuarios pelo id
-def buscar_usuario_por_id(id_usuario: int):
+def buscar_usuario_por_id(id: int):
    '''
       Descrição: Função para buscar usuario pelo id no sistema.\n
       Parâmetro: id (int) - id do usuario a ser buscado.\n
       Retorno: Cadastro de usuario que corresponde ao id informado.
    '''
    for usuario in cadastro_usuarios:
-      if usuario.get('id') == id_usuario:
+      if usuario.get('id') == id:
          return usuario
    print("Usuario não cadastrado")
    return None
