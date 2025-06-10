@@ -1,6 +1,5 @@
 cadastro_usuarios = []
 
-# função para adicionar livro no catalogo
 def adicionar_usuario(novo_usuario : dict) -> None:
    '''
       Descrição: Função para adicionar novo cliente no sistema(lista).\n
@@ -9,7 +8,6 @@ def adicionar_usuario(novo_usuario : dict) -> None:
    '''    
    cadastro_usuarios.append(novo_usuario)
 
-# função para listar os clientes no sistema
 def listar_usuarios() -> list:
    '''
       Descrição: Função para retornar os usuarios no sistema(lista).\n
@@ -18,7 +16,6 @@ def listar_usuarios() -> list:
    '''
    return cadastro_usuarios
 
-# função para pesquisar usuarios pelo id
 def buscar_usuario_por_id(id_usuario: int):
    '''
       Descrição: Função para buscar usuario pelo id no sistema.\n
@@ -31,7 +28,6 @@ def buscar_usuario_por_id(id_usuario: int):
    print("Usuario não cadastrado")
    return None
 
-# função para alterar email de usuario pelo id
 def atualizar_email_por_id(id_usuario: int, novo_email: str) -> bool:
     '''
         Descrição: Função para atualizar o email de um usuário pelo id.\n

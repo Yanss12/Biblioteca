@@ -52,13 +52,11 @@ def listar_emprestimos_ativos():
     Retorno: A função retorna uma lista de empréstimos ativos, imprimindo os detalhes de cada um.
     """
     for emprestimo in registro_emprestimos:
-        # Encontrar o livro correspondente ao empréstimo
         livro = None
         for l in catalogo_livros:
             if l['id'] == emprestimo['id_livro']:
                 livro = l
                 break
-        # Verifica se o livro está emprestado (não disponível)
         if livro and not livro['disponivel']:
             usuario = buscar_usuario_por_id(emprestimo['id_usuario'])
             print(f"Livro: {livro['titulo']}, Usuário: {usuario['nome']}, Data devolução: {emprestimo['data_devolucao']}, Status: Ativo")

@@ -4,9 +4,8 @@ from emprestimos import *
 import pprint
 
 while True:
-    opcao_menu = int(input("\nInforme sua opção: (1 - Gerenciar livros) (2 - Gerenciar usuario) (3 - Gerenciar emprestimos): "))
+    opcao_menu = int(input("\nInforme sua opção: (1 - Gerenciar livros) (2 - Gerenciar usuario) (3 - Gerenciar emprestimos) (4 - sair): "))
     
-    # Gerenciamento de livros
     if opcao_menu == 1:
         opcao_livro = int(input("\nInforme sua opção: (1 - Adicionar livro) (2 - Exibir catalogo) (3 - Buscar titulo) (4 - definir disponibilidade de livro): "))
 
@@ -42,7 +41,6 @@ while True:
             id_livro = int(input("Informe o ID do livro que deseja atualizar a disponibilidade: "))
             atualizar_disponibilidade_livro(id_livro)
 
-    # Gerenciamento de usuario
     elif opcao_menu == 2:
         opcao_usuario = int(input("\nInforme sua opção: (1 - Adicionar cliente) (2 - Exibir clientes) (3 - buscar cliente) (4 - Atualizar email): "))
 
@@ -70,17 +68,17 @@ while True:
             print(resultado_cliente)
         
         elif opcao_usuario == 4:
-                id_usuario = int(input("Informe o ID do usuario que deseja alterar o email: "))
-                novo_email = input("Informe o novo email: ")
+            id_usuario = int(input("Informe o ID do usuario que deseja alterar o email: "))
+            novo_email = input("Informe o novo email: ")
 
-                cadastro_usuarios = listar_usuarios()
+            cadastro_usuarios = listar_usuarios()
 
-                status_email = atualizar_email_por_id(id_usuario, novo_email)
+            status_email = atualizar_email_por_id(id_usuario, novo_email)
 
-                if status_email:
-                    print('Email atualizado com sucesso')
-                else:
-                    print('Usuario não encontrado')
+            if status_email:
+                print('Email atualizado com sucesso')
+            else:
+                print('ID de usuario não encontrado. Verifique o ID e tente novamente.')
 
     elif opcao_menu == 3: 
         opcao_emprestimo = int(input("\nInforme sua opção: (1 - Realizar emprestimo) (2 - Devolver emprestimo) (3 - Listar emprestimos ativos) (4 - Listar historico de um usuario): "))
@@ -114,3 +112,7 @@ while True:
         elif opcao_emprestimo == 4:
             id_usuario = int(input("Informe o id do usuario que deseja o historico: "))
             historico_emprestimos_usuario(id_usuario)
+
+    elif opcao_menu == 4:
+        print("Saindo do sistema...")
+        break
